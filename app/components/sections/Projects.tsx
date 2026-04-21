@@ -167,42 +167,42 @@ export const Projects: FC = () => {
                             </button>
 
                             {/* LEFT SIDE: Info (Scrollable) */}
-                            <div className="w-full lg:w-[45%] p-8 md:p-12 overflow-y-auto custom-scrollbar border-b lg:border-b-0 lg:border-r border-white/5">
-                                <div className="flex gap-2 mb-6">
-                                    <span className="px-4 py-1 bg-[#00B5DE]/10 text-[#00B5DE] text-xs font-bold uppercase tracking-widest rounded-full">
+                            <div className="w-full lg:w-[45%] p-6 md:p-10 overflow-y-auto custom-scrollbar border-b lg:border-b-0 lg:border-r border-white/5">
+                                <div className="flex gap-2 mb-4">
+                                    <span className="px-4 py-1 bg-[#00B5DE]/10 text-[#00B5DE] text-[10px] font-bold uppercase tracking-widest rounded-full">
                                         {selectedProject.category}
                                     </span>
                                 </div>
 
-                                <h3 className="text-3xl md:text-4xl font-black mb-8 leading-tight">{selectedProject.title}</h3>
+                                <h3 className="text-2xl md:text-3xl font-black mb-6 leading-tight">{selectedProject.title}</h3>
 
-                                <div className="space-y-10">
+                                <div className="space-y-6">
                                     <section>
-                                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-3">Descripción General</h4>
-                                        <p className="text-gray-400 leading-relaxed font-light text-base md:text-lg">{selectedProject.fullDesc}</p>
+                                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-2">Descripción General</h4>
+                                        <p className="text-gray-400 leading-relaxed font-light text-sm md:text-base">{selectedProject.fullDesc}</p>
                                     </section>
 
-                                    <div className="grid grid-cols-2 gap-8">
+                                    <div className="grid grid-cols-2 gap-6">
                                         <section>
-                                            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-3">Tiempo Estimado</h4>
-                                            <p className="text-white font-semibold text-lg">{selectedProject.time}</p>
+                                            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-2">Tiempo Estimado</h4>
+                                            <p className="text-white font-semibold text-base">{selectedProject.time}</p>
                                         </section>
                                         <section>
-                                            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-3">Tecnologías</h4>
+                                            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-2">Tecnologías</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {selectedProject.tech.map(t => (
-                                                    <span key={t} className="text-xs text-white/60 bg-white/5 px-2 py-1 rounded-md">{t}</span>
+                                                    <span key={t} className="text-[10px] text-white/60 bg-white/5 px-2 py-1 rounded-md">{t}</span>
                                                 ))}
                                             </div>
                                         </section>
                                     </div>
 
                                     <section>
-                                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-4">Objetivos Principales</h4>
-                                        <ul className="space-y-3">
+                                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-3">Objetivos</h4>
+                                        <ul className="space-y-2">
                                             {selectedProject.objectives.map((obj, i) => (
-                                                <li key={i} className="flex gap-3 text-sm text-gray-400 group">
-                                                    <span className="w-5 h-5 rounded-full bg-[#00B5DE]/20 text-[#00B5DE] flex-shrink-0 flex items-center justify-center text-[10px] font-black mt-0.5">
+                                                <li key={i} className="flex gap-3 text-xs text-gray-400 group">
+                                                    <span className="w-4 h-4 rounded-full bg-[#00B5DE]/20 text-[#00B5DE] flex-shrink-0 flex items-center justify-center text-[9px] font-black mt-0.5">
                                                         {i + 1}
                                                     </span>
                                                     {obj}
