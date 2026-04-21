@@ -1,26 +1,209 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-tron-cyan: #00e5ff;
+  --color-tron-blue: #0066ff;
+  --color-tron-dark: #0a0a0f;
+  --color-tron-secondary: #0d1117;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --radius-neumorphic: 16px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --shadow-neumorphic: 8px 8px 16px #050505, -8px -8px 16px #151515;
+  --shadow-neumorphic-inset: inset 4px 4px 8px #050505, inset -4px -4px 8px #151515;
+  --shadow-neon: 0 0 10px rgba(0, 229, 255, 0.3);
+  --shadow-neon-hover: 0 0 20px rgba(0, 229, 255, 0.5);
+
+  --animate-glow: slideGlow 2s infinite;
+
+  @keyframes slideGlow {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 100%;
+    }
   }
 }
 
+:root {
+  /* Colores base */
+  --bg-dark: #0a0a0f;
+  --bg-secondary: #0d1117;
+  --bg-deep: #001a4a;
+
+  /* Azules celestes (Tron Legacy) */
+  --cyan-primary: #00e5ff;
+  --cyan-glow: #00b4d8;
+  --blue-neon: #0066ff;
+  --blue-deep: #001a4a;
+
+  /* Textos */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-accent: #00e5ff;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- CLASES DE SKILL 3 --- */
+
+.neumorphic {
+  background: #0d1117;
+  border-radius: 16px;
+  box-shadow:
+    8px 8px 16px #050505,
+    -8px -8px 16px #151515;
+}
+
+.neumorphic-inset {
+  background: #0d1117;
+  border-radius: 16px;
+  box-shadow:
+    inset 4px 4px 8px #050505,
+    inset -4px -4px 8px #151515;
+}
+
+.glass {
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 16px;
+}
+
+.glass-glow {
+  background: rgba(0, 229, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #00e5ff, #0066ff);
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.5);
+  background: linear-gradient(135deg, #00f0ff, #0077ff);
+}
+
+.button-secondary {
+  background: #0d1117;
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 10px #050505, -5px -5px 10px #151515;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button-secondary:hover {
+  background: rgba(0, 229, 255, 0.1);
+  box-shadow: 3px 3px 6px #050505, -3px -3px 6px #151515;
+}
+
+.card {
+  background: rgba(13, 17, 23, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  transition: all 0.3s ease;
+  box-shadow: 8px 8px 16px #050505, -8px -8px 16px #151515;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.2), 8px 8px 16px #050505, -8px -8px 16px #151515;
+}
+
+.glow-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+  animation: slideGlow 2s infinite;
+}
+
+.neon-glow {
+  text-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00e5ff, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  padding: 80px 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Custom subtle scrollbar for TRON style */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 181, 222, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 181, 222, 0.5);
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 181, 222, 0.2) transparent;
 }
