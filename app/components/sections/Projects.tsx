@@ -167,7 +167,7 @@ export const Projects: FC = () => {
                             </button>
 
                             {/* LEFT SIDE: Info (Scrollable) */}
-                            <div className="w-full lg:w-[45%] p-6 md:p-10 overflow-y-auto custom-scrollbar border-b lg:border-b-0 lg:border-r border-white/5">
+                            <div className="w-full lg:w-[38%] p-6 md:p-10 overflow-y-auto custom-scrollbar border-b lg:border-b-0 lg:border-r border-white/5">
                                 <div className="flex gap-2 mb-4">
                                     <span className="px-4 py-1 bg-[#00B5DE]/10 text-[#00B5DE] text-[10px] font-bold uppercase tracking-widest rounded-full">
                                         {selectedProject.category}
@@ -182,7 +182,7 @@ export const Projects: FC = () => {
                                         <p className="text-gray-400 leading-relaxed font-light text-sm md:text-base">{selectedProject.fullDesc}</p>
                                     </section>
 
-                                    <div className="grid grid-cols-2 gap-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <section>
                                             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE] mb-2">Tiempo Estimado</h4>
                                             <p className="text-white font-semibold text-base">{selectedProject.time}</p>
@@ -214,12 +214,12 @@ export const Projects: FC = () => {
                             </div>
 
                             {/* RIGHT SIDE: Visual Carousel */}
-                            <div className="w-full lg:w-[55%] bg-[#0a0a0f] relative flex flex-col group/carousel">
-                                <div className="p-8 pb-4 flex justify-between items-center z-10">
+                            <div className="w-full lg:w-[62%] bg-[#0a0a0f] relative flex flex-col group/carousel">
+                                <div className="p-6 pb-2 flex justify-between items-center z-10">
                                     <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00B5DE]">Pantallas del Proyecto</h4>
                                 </div>
 
-                                <div className="flex-1 relative flex items-center justify-center px-4 sm:px-12 pb-12 overflow-hidden">
+                                <div className="flex-1 relative flex items-center justify-center px-4 sm:px-6 pb-6 overflow-hidden">
                                     {/* Navigation Arrows - Absolute Sides */}
                                     <button
                                         onClick={() => paginateScreen(-1)}
@@ -245,7 +245,7 @@ export const Projects: FC = () => {
                                                 animate="center"
                                                 exit="exit"
                                                 transition={{ duration: 0.5, ease: 'easeInOut' }}
-                                                className="absolute inset-x-0 inset-y-0 bottom-16 bg-white/5 rounded-3xl border border-white/5 flex items-center justify-center overflow-hidden"
+                                                className="absolute inset-x-0 inset-y-0 bottom-10 bg-white/5 rounded-3xl border border-white/5 flex items-center justify-center overflow-hidden"
                                             >
                                                 <div className="absolute inset-0 bg-[#00B5DE]/5" />
                                                 {selectedProject.screens[screenIndex].endsWith('.mp4') ? (
@@ -255,13 +255,13 @@ export const Projects: FC = () => {
                                                         loop
                                                         muted
                                                         playsInline
-                                                        className="w-full h-full object-cover relative z-10"
+                                                        className="w-full h-full object-contain relative z-10"
                                                     />
                                                 ) : selectedProject.screens[screenIndex].startsWith('/') ? (
                                                     <img
                                                         src={selectedProject.screens[screenIndex]}
                                                         alt={selectedProject.title}
-                                                        className="w-full h-full object-cover relative z-10"
+                                                        className="w-full h-full object-contain relative z-10"
                                                     />
                                                 ) : (
                                                     <span className="text-white/20 font-black text-6xl md:text-8xl italic select-none">
@@ -274,7 +274,7 @@ export const Projects: FC = () => {
                                     </div>
 
                                     {/* Carousel Indicators */}
-                                    <div className="absolute bottom-8 left-0 w-full flex justify-center gap-2">
+                                    <div className="absolute bottom-4 left-0 w-full flex justify-center gap-2">
                                         {selectedProject.screens.map((_, i) => (
                                             <button
                                                 key={i}
