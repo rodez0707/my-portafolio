@@ -19,12 +19,13 @@ const PROJECTS: Project[] = [
     {
         id: 1,
         title: 'BOTFORGE',
-        shortDesc: 'Una solución integral con panel de administración y pasarela de pagos.',
-        fullDesc: 'Desarrollo de una interfaz de usuario avanzada para una plataforma de comercio electrónico de alta gama. El enfoque principal fue la optimización de la tasa de conversión y una navegación fluida.',
+        shortDesc: 'Plataforma de backtesting para validar estrategias de trading algorítmico sin riesgo.',
+        fullDesc: 'Desarrollo de una plataforma completa de backtesting que permite a los traders validar sus estrategias con datos históricos, eliminando la incertidumbre antes de operar en el mercado real con capital propio.',
         objectives: [
-            'Optimizar el rendimiento de carga en un 40%',
-            'Implementar un sistema de filtros avanzado',
-            'Crear un panel de control intuitivo para vendedores'
+            'Implementar motor de backtesting de alta fidelidad',
+            'Soportar múltiples pares de trading y timeframes',
+            'Proveer métricas detalladas (Sharpe ratio, drawdown, win rate)',
+            'Permitir validación visual de estrategias'
         ],
         time: '3 Meses',
         tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
@@ -39,18 +40,25 @@ const PROJECTS: Project[] = [
     },
     {
         id: 2,
-        title: 'App de Gestión Energética',
-        shortDesc: 'Visualización de datos en tiempo real para el sector industrial.',
-        fullDesc: 'Dashboard interactivo que permite monitorear el consumo de energía en múltiples plantas industriales. Incluye gráficos dinámicos y alertas predictivas basadas en IA.',
+        title: 'ALEXGYM',
+        shortDesc: 'Sistema de gestión de inventario y mantenimiento para gimnasio de alta gama con alto volumen de máquinas.',
+        fullDesc: 'Plataforma integral para la gestión del inventario de un gimnasio de alta gama con alto volumen de máquinas distribuidas por zonas. Permite el control de ubicaciones, monitoreo de estado (activa/dañada/mantenimiento) y registro histórico de cambios. Incluye generación de reportes automatizados y estadísticas detalladas para optimizar la disponibilidad del parque de máquinas.',
         objectives: [
-            'Integración de APIs en tiempo real',
-            'Visualización de grandes volúmenes de datos',
-            'Sistema de alertas personalizable'
+            'Gestionar ubicaciones de máquinas separadas por zonas (cardio, pesas, funcional, etc.)',
+            'Controlar estado de máquinas con opciones: activa, dañada, en mantenimiento',
+            'Registrar historial de cambios de estado con fecha y responsable',
+            'Generar reportes completos de máquinas dañadas y tiempos de reparación',
+            'Visualizar estadísticas del estado del parque de máquinas (porcentaje de disponibilidad, máquinas más problemáticas)',
+            'Optimizar la gestión de mantenimiento preventivo y correctivo'
         ],
-        time: '5 Meses',
-        tech: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
-        category: 'Development',
-        screens: ['#1', '#2', '#3', '#4']
+        time: '4 Meses',
+        tech: ['React-vite', 'TypeScript', 'CSS3', 'Bootstrap'],
+        category: 'Web Design',
+        screens: [
+            '/5134479445430308256.jpg',
+            '/video5134479444970309834.mp4',
+            '/video5134479444970309835.mp4'
+        ]
     },
 ];
 
