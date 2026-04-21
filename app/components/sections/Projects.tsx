@@ -256,13 +256,13 @@ export const Projects: FC = () => {
                                                         loop
                                                         muted
                                                         playsInline
-                                                        className="w-full h-full object-contain relative z-10"
+                                                        className="w-full h-full object-cover relative z-10"
                                                     />
                                                 ) : selectedProject.screens[screenIndex].startsWith('/') ? (
                                                     <img
                                                         src={selectedProject.screens[screenIndex]}
                                                         alt={selectedProject.title}
-                                                        className="w-full h-full object-contain relative z-10"
+                                                        className="w-full h-full object-cover relative z-10"
                                                     />
                                                 ) : (
                                                     <span className="text-white/20 font-black text-6xl md:text-8xl italic select-none">
