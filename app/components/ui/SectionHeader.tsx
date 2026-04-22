@@ -22,7 +22,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 {title} {highlight && <span className="text-[#00B5DE]">{highlight}</span>}
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className={`text-gray-500 max-w-2xl ${center ? 'mx-auto' : ''}`}>
                 {subtitle}
             </p>
         </div>
