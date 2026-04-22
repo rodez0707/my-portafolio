@@ -15,16 +15,12 @@ const AnimatedBackground: React.FC = () => {
     }, []);
 
     const blobs = [
-        { size: '400px', top: '5%', left: '10%', speedX: 0.1, speedY: 0.35, delay: '0s' },
-        { size: '600px', top: '15%', left: '60%', speedX: -0.15, speedY: 0.45, delay: '-2s' },
-        { size: '350px', top: '45%', left: '15%', speedX: 0.2, speedY: 0.25, delay: '-4s' },
-        { size: '500px', top: '65%', left: '55%', speedX: -0.1, speedY: 0.4, delay: '-6s' },
-        { size: '400px', top: '85%', left: '10%', speedX: 0.15, speedY: 0.3, delay: '-8s' },
+        { size: '400px', top: '10%', left: '15%', speedX: 0.1, speedY: 0.35, delay: '0s' },
+        { size: '600px', top: '50%', left: '65%', speedX: -0.15, speedY: 0.45, delay: '-2s' },
     ];
 
     return (
         <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-            {/* CSS inline style for the floating animation */}
             <style jsx global>{`
                 @keyframes float {
                     0%, 100% { transform: translate(0, 0) scale(1); }

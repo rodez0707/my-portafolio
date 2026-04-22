@@ -1,9 +1,9 @@
-import About from '@/components/sections/About';
-import { Hero } from '@/app/components/sections/Hero';
-import { Stack } from '@/app/components/sections/Stack';
-import { Footer } from '@/app/components/sections/Footer';
-import { Contact } from '@/app/components/sections/Contact';
-import { Projects } from '@/app/components/sections/Projects';
+import About from '@/app/components/sections/About/About';
+import { Hero } from '@/app/components/sections/Hero/Hero';
+import { Stack } from '@/app/components/sections/Stack/Stack';
+import { Footer } from '@/app/components/sections/Footer/Footer';
+import { Contact } from '@/app/components/sections/Contact/Contact';
+import { Projects } from '@/app/components/sections/Projects/Projects';
 // ... (rest of imports if any, but adding it at top is better)
 
 const Button: React.FC<{ children: React.ReactNode; variant?: 'primary' | 'secondary'; className?: string }> = ({ children, variant = 'primary', className = "" }) => {

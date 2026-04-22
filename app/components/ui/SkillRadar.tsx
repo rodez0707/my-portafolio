@@ -5,24 +5,22 @@ import { motion } from 'framer-motion';
 
 const skills = [
     { name: 'TypeScript', angle: -90 },
-    { name: 'PHP', angle: -30 },
+    { name: 'Vite', angle: -30 },
     { name: 'CSS', angle: 30 },
     { name: 'React', angle: 90 },
     { name: 'HTML', angle: 150 },
     { name: 'Tailwind', angle: 210 },
 ];
 
-const RING_RADIUS = 100; // half of the 200px ring
-const LABEL_RADIUS = 140; // label orbit radius (from center)
-const ROTATION_DURATION = 18; // seconds per full revolution
+const RING_RADIUS = 101;
+const LABEL_RADIUS = 141;
+const ROTATION_DURATION = 18;
 
 const SkillRadar = () => {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
     return (
         <div className="relative w-[320px] h-[320px] flex items-center justify-center">
-
-            {/* ── Rotating assembly: ring + labels ── */}
             <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ rotate: 360 }}
@@ -32,7 +30,6 @@ const SkillRadar = () => {
                     ease: 'linear',
                 }}
             >
-                {/* Outer ring with dots */}
                 <div
                     className="absolute rounded-full border border-white/20"
                     style={{ width: RING_RADIUS * 2, height: RING_RADIUS * 2 }}
@@ -50,7 +47,6 @@ const SkillRadar = () => {
                     ))}
                 </div>
 
-                {/* Labels — orbit at LABEL_RADIUS, counter-rotate to stay upright */}
                 {skills.map((skill) => {
                     const rad = (skill.angle * Math.PI) / 180;
                     const x = Math.cos(rad) * LABEL_RADIUS;
@@ -60,7 +56,6 @@ const SkillRadar = () => {
                     return (
                         <motion.div
                             key={skill.name}
-                            // counter-rotate to remain horizontal while the parent spins
                             animate={{ rotate: -360 }}
                             transition={{
                                 duration: ROTATION_DURATION,
@@ -93,12 +88,11 @@ const SkillRadar = () => {
                 })}
             </motion.div>
 
-            {/* ── Center circle (static, does NOT rotate) ── */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="relative z-10 w-[140px] h-[140px] rounded-full bg-[#00B5DE] flex flex-col items-center justify-center shadow-[0_0_40px_rgba(0,181,222,0.45)]"
+                className="relative z-10 w-[142px] h-[142px] rounded-full bg-[#00B5DE] flex flex-col items-center justify-center shadow-[0_0_40px_rgba(0,181,222,0.45)]"
             >
                 <span className="text-4xl font-black text-white leading-none">88%</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/80 font-bold mt-1">Frontend</span>

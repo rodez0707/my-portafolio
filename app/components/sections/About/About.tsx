@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ChartToggle from '../ui/ChartToggle';
-import SkillRadar from '../ui/SkillRadar';
-import SkillBarChart from '../ui/SkillBarChart';
+import ChartToggle from '@/app/components/ui/ChartToggle';
+import SkillRadar from '@/app/components/ui/SkillRadar';
+import SkillBarChart from '@/app/components/ui/SkillBarChart';
 
 const About = () => {
     const [activeView, setActiveView] = useState<'pie' | 'bar'>('pie');
@@ -13,13 +13,10 @@ const About = () => {
 
     return (
         <section id="about" className="min-h-screen flex items-center py-20 bg-[#0d1117] relative overflow-hidden">
-            {/* Background decoration */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00B5DE]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
             <div className="container px-6 mx-auto relative z-10">
                 <div className="grid lg:grid-cols-[40%_60%] gap-16 items-center">
-
-                    {/* SECCIÓN IZQUIERDA: Panel Interactivo */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -60,7 +57,6 @@ const About = () => {
                         </div>
                     </motion.div>
 
-                    {/* SECCIÓN DERECHA: Perfil e información */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}

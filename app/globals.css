@@ -3,8 +3,8 @@
 @theme {
   --color-tron-cyan: #00e5ff;
   --color-tron-blue: #0066ff;
-  --color-tron-dark: #0a0a0f;
-  --color-tron-secondary: #0d1117;
+  --color-tron-dark: #000000;
+  --color-tron-secondary: #050508;
 
   --radius-neumorphic: 16px;
 
@@ -28,9 +28,9 @@
 
 :root {
   /* Colores base */
-  --bg-dark: #0a0a0f;
-  --bg-secondary: #0d1117;
-  --bg-deep: #001a4a;
+  --bg-dark: #000000;
+  --bg-secondary: #050508;
+  --bg-deep: #000510;
 
   /* Azules celestes (Tron Legacy) */
   --cyan-primary: #00e5ff;

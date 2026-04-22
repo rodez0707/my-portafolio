@@ -14,19 +14,17 @@ const FloatingNav = () => {
     ], []);
 
     useEffect(() => {
-        // Track which sections are currently visible
         const visibleSections = new Map<string, number>();
 
         const observerOptions = {
             root: null,
-            rootMargin: '-10% 0px -85% 0px', // activates when top 15% of viewport is crossed
+            rootMargin: '-10% 0px -85% 0px',
             threshold: 0,
         };
 
         const observerCallback = (entries: IntersectionObserverEntry[]) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    // Store the distance from top of viewport (lower = higher on screen)
                     visibleSections.set(entry.target.id, entry.boundingClientRect.top);
                 } else {
                     visibleSections.delete(entry.target.id);
@@ -34,7 +32,6 @@ const FloatingNav = () => {
             });
 
             if (visibleSections.size > 0) {
-                // Pick the section whose top edge is closest to the top of the viewport
                 const topmost = [...visibleSections.entries()].reduce((a, b) =>
                     Math.abs(a[1]) < Math.abs(b[1]) ? a : b
                 );
